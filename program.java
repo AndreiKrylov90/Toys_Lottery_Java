@@ -33,8 +33,6 @@ public class program {
             pq.add(controller.createToy(3, "AngryBird", 100 - (r.nextInt(toyPeriodicity3) + 1)));
         }
 
-        System.out.println("List of all toys: " + pq);
-
         lottery(pq);
 
     }
