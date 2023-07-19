@@ -1,45 +1,20 @@
 package controller;
 
-import model.Group;
-import model.Student;
-import model.Teacher;
+import model.Toy;
 import service.DataServiceImpl;
-import service.GroupServiceImpl;
-
-import java.util.List;
 
 public class Controller {
     DataServiceImpl dataService;
-    GroupServiceImpl groupService;
 
     public Controller() {
         this.dataService = new DataServiceImpl();
-        this.groupService = new GroupServiceImpl();
     }
 
-    public Group createGroup(List<Student> inputList, Teacher teacher) {
-       
-            return groupService.createGroup(inputList, teacher);
+    public Toy createToy(Integer toyId, String toyName, Integer toyPeriodicity) {
+        return dataService.createToy(toyId, toyName, toyPeriodicity);
     }
 
-    public void readGroup(Group group) {
-        groupService.readGroup(group);
+    public void readToy(Toy toy) {
+        dataService.readToy(toy);
     }
-
-    public Student createStudent(String name, Integer bornYear) {
-        return dataService.createStudent(name, bornYear);
-    }
-
-    public void readStudent(Student student) {
-        dataService.readStudent(student);
-    }
-
-    public Teacher createTeacher(Teacher inputTeacher) {
-        return dataService.createTeacher(inputTeacher.name, inputTeacher.BornYear, inputTeacher.disciplinesTaught);
-    }
-
-    public void readTeacher(Teacher teacher) {
-        dataService.readTeacher(teacher);
-    }
-
 }

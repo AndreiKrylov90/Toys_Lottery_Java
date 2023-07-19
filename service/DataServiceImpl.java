@@ -1,35 +1,21 @@
 package service;
 
-import model.Disciplines;
-import model.Student;
-import model.Teacher;
+
+import model.Toy;
 
 public class DataServiceImpl implements Service {
 
     @Override
-    public Student createStudent(String name, Integer bornYear) {
-        Student student = new Student();
-        student.name = name;
-        student.BornYear = bornYear;
-        return student;
+    public Toy createToy(Integer toyId, String toyName, Integer toyPeriodicity) {
+        Toy toy = new Toy();
+        toy.toyId = toyId;
+        toy.toyName = toyName;
+        toy.toyPeriodicity = toyPeriodicity;
+        return toy;
     }
 
     @Override
-    public void readStudent(Student student) {
-        System.out.println(student.studenId + " " + student.name + " " + student.bornYear);
-    }
-
-    @Override
-    public Teacher createTeacher(String name, Integer bornYear, Disciplines disciplinesTaught) {
-        Teacher teacher = new Teacher();
-        teacher.name = name;
-        teacher.BornYear = bornYear;
-        teacher.disciplinesTaught = disciplinesTaught;
-        return teacher;
-    }
-
-    @Override
-    public void readTeacher(Teacher teacher) {
-        System.out.println(teacher.idTeacher + " " + teacher.name + " " + teacher.BornYear + teacher.disciplinesTaught);
+    public void readToy(Toy toy) {
+        System.out.println(toy.toyId + " " +  toy.toyName + " " + toy.toyPeriodicity);
     }
 }
